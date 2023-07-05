@@ -13,11 +13,11 @@ namespace ChatGPT
             _httpClient = new HttpClient();
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
         }
-    
+
 
         internal async Task<Response> CallChatCompletionAsync(ChatCompletionParams parameters)
         {
-            string url = "https://api.openai.com/v1/chat/completions";
+            var url = "https://api.openai.com/v1/chat/completions";
 
             var requestJson = JsonSerializer.Serialize(parameters);
 
@@ -32,7 +32,5 @@ namespace ChatGPT
 
             return null;
         }
-
-
     }
 }

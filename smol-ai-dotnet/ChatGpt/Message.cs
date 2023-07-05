@@ -1,9 +1,14 @@
 ﻿
+using System.Text.Json.Serialization;
+
 namespace ChatGPT
 {
     public class Message
     {
-        public string role { get; set; }
-        public string content { get; set; }
+        [JsonPropertyName("role")]
+        public string Role { get; set; }
+
+        [JsonPropertyName("content")]
+        public string Content { get; set; }
     }
 }
